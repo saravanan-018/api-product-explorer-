@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Browse and search a curated product catalog powered by the DummyJSON API."
+    />
+    <title>Goods — Product Explorer</title>
+    <link rel="preconnect" href="https://dummyjson.com" />
+    <link rel="preconnect" href="https://cdn.dummyjson.com" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Goods home">
+        <span class="brand-mark" aria-hidden="true">g.</span>
+        <span>goods<span class="brand-period">.</span></span>
+      </a>
+      <span class="header-note">A little something for every day</span>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">THE GOOD FINDS</p>
+        <h1 id="page-title">Find your next <span>favorite.</span></h1>
+        <p class="intro-copy">
+          Thoughtful picks, curious discoveries, and everyday essentials—all in one place.
+        </p>
+      </section>
+
+      <section class="catalog" aria-label="Product catalog">
+        <div class="toolbar">
+          <label class="search-box">
+            <span class="sr-only">Search products</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="10.8" cy="10.8" r="6.8"></circle>
+              <path d="m16 16 4.2 4.2"></path>
+            </svg>
+            <input
+              id="search-input"
+              type="search"
+              placeholder="Search the collection..."
+              autocomplete="off"
+            />
+            <kbd>/</kbd>
+          </label>
+
+          <div class="toolbar-controls">
+            <label class="select-wrap">
+              <span class="sr-only">Filter by category</span>
+              <select id="category-filter" disabled>
+                <option value="all">All categories</option>
+              </select>
+            </label>
+            <label class="select-wrap">
+              <span class="sr-only">Sort products</span>
+              <select id="sort-select" disabled>
+                <option value="featured">Featured</option>
+                <option value="price-low">Price: low to high</option>
+                <option value="price-high">Price: high to low</option>
+                <option value="rating">Top rated</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="results-heading">
+          <h2>Our collection</h2>
+          <p id="result-count" aria-live="polite">Getting things ready...</p>
+        </div>
+
+        <div id="status" class="status-panel" role="status" aria-live="polite">
+          <span class="loader" aria-hidden="true"></span>
+          <p>Finding the good stuff...</p>
+        </div>
+        <div id="product-grid" class="product-grid" aria-busy="true"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Made for the joy of finding.</span>
+      <span>Product details provided by DummyJSON</span>
+    </footer>
+  </body>
+</html>
